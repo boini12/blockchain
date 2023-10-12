@@ -13,7 +13,7 @@ public class Main {
     private final static Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
-        logger.info("Anwendung startet");
+        logger.info("main function is starting");
         String path = "src/main/java/example.json";
         readJson(path);
         System.out.println(getNameFromJson("{\"name\": \"Ines\"}"));
@@ -24,7 +24,7 @@ public class Main {
             throw new NullPointerException("input must not be null");
         }
             JsonElement element = parser.parse(json);
-            logger.info("JSON erfolgreich geparst");
+            logger.info("JSON has been successfully parsed");
             JsonObject object = element.getAsJsonObject();
             if(!object.has("name")){
                 throw new IllegalArgumentException("JSON does not contain name");
